@@ -15,14 +15,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      //this for example 1
-      // create: (context) => CounterBloc(),
-      // child: MaterialApp(home: CounterScreen()),
-
-      //-- this for switch example
-      create: (context) => SwitchBlock(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => SwitchBlock()),
+      ],
       child: MaterialApp(home: SwitchExampleS()),
     );
+    // return BlocProvider(
+    //   //this for example 1
+    //   // create: (context) => CounterBloc(),
+    //   // child: MaterialApp(home: CounterScreen()),
+
+    //   //-- this for switch example
+    //   create: (context) => SwitchBlock(),
+    // child: MaterialApp(home: SwitchExampleS()),
   }
 }

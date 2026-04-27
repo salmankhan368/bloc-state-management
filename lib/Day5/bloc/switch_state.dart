@@ -2,12 +2,16 @@ import 'package:equatable/equatable.dart';
 
 class SwitchState extends Equatable {
   bool isSwitch;
-  SwitchState({this.isSwitch = false});
-  SwitchState copyWith({bool? isSwitch}) {
-    return SwitchState(isSwitch: isSwitch ?? this.isSwitch);
+  double slider;
+  SwitchState({this.isSwitch = false, this.slider = 1});
+  SwitchState copyWith({bool? isSwitch, double? slider}) {
+    return SwitchState(
+      isSwitch: isSwitch ?? this.isSwitch,
+      slider: slider ?? this.slider,
+    );
   }
 
   @override
   // TODO: implement props
-  List<Object?> get props => [isSwitch];
+  List<Object?> get props => [isSwitch, slider];
 }
