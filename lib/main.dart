@@ -6,6 +6,8 @@ import 'package:my_bloc/Day5/bloc/switch_block.dart';
 import 'package:my_bloc/Day5/view/switch_example_scrren.dart';
 import 'package:my_bloc/Day6/View/image_picker_screens.dart';
 import 'package:my_bloc/Day6/bloc/image_picker_bloc.dart';
+import 'package:my_bloc/Day7/bloc/todo_bloc.dart';
+import 'package:my_bloc/Day7/view/todo_screen.dart';
 import 'package:my_bloc/utils/image_picker_utils.dart';
 
 void main() {
@@ -30,13 +32,10 @@ class MyApp extends StatelessWidget {
           create: (context) =>
               ImagePickerBloc(imagePickerUtils: ImagePickerUtils()),
         ),
+        BlocProvider(create: (context) => TodoBloc()),
       ],
 
-      child: MaterialApp(
-        debugShowCheckedModeBanner: true,
-
-        home: ImagePickerScreen(),
-      ),
+      child: MaterialApp(debugShowCheckedModeBanner: true, home: TodoScreen()),
     );
   }
 }
