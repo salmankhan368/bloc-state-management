@@ -10,6 +10,8 @@ import 'package:my_bloc/Day7/bloc/todo_bloc.dart';
 import 'package:my_bloc/Day7/view/todo_screen.dart';
 import 'package:my_bloc/Day8/post/View/post_Screen.dart';
 import 'package:my_bloc/Day8/post_bloc/post_bloc.dart';
+import 'package:my_bloc/project_Day/bloc/crypto_bloc.dart';
+import 'package:my_bloc/project_Day/view/crypto_screen.dart';
 import 'package:my_bloc/utils/image_picker_utils.dart';
 
 void main() {
@@ -36,9 +38,13 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (context) => TodoBloc()),
         BlocProvider(create: (context) => PostBloc()),
+        BlocProvider(create: (context) => CryptoBloc()),
       ],
 
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: PostScreen()),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: CryptoScreen(),
+      ),
     );
   }
 }

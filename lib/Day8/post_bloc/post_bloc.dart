@@ -36,27 +36,6 @@ class PostBloc extends Bloc<PostEvent, PostStates> {
         });
   }
 
-  // void _filterList(SearchItem event, Emitter<PostStates> emit) {
-  //   tempPostList = state.postList
-  //       .where((element) => element.id.toString() == event.stSearch.toString())
-  //       .toList();
-  //   emit.copyWith(tempPostList: tempPostList);
-  // }
-  // void _filterList(SearchItem event, Emitter<PostStates> emit) {
-  //   // Agar search field khali hai, toh tempPostList ko khali emit kar do
-  //   if (event.stSearch.isEmpty) {
-  //     emit(state.copyWith(tempPostList: const []));
-  //     return;
-  //   }
-
-  //   // Aapka apna filter logic (ID match karne wala)
-  //   final filtered = state.postList
-  //       .where((element) => element.id.toString() == event.stSearch.toString())
-  //       .toList();
-
-  //   // CRITICAL FIX: state.copyWith ko 'emit' ke andar wrap karna zaroori hai
-  //   emit(state.copyWith(tempPostList: filtered));
-  // }
   void _filterList(SearchItem event, Emitter<PostStates> emit) {
     // 1. Agar search bar khali hai, toh temp list ko khali karo
     if (event.stSearch.isEmpty) {
