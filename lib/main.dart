@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_bloc/Day10/homes/homes_page.dart';
 import 'package:my_bloc/Day4/View/counter_Screen.dart';
 import 'package:my_bloc/Day4/block/counter_bloc.dart';
 import 'package:my_bloc/Day5/bloc/switch_block.dart';
@@ -44,10 +45,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => LoginBloc()),
       ],
 
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
-      ),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: HomesPage()),
     );
   }
 }
